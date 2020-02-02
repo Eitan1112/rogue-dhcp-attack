@@ -18,3 +18,6 @@ On DHCP ACK - Continue the attack
 On DHCP NAK - Stops the attack, the server is neutralized.
 
 All the events are logged to 'script.log'.
+
+## Important Note
+* This tool will not work when connected to Wifi. The reason is that access points drop packets with spoofed MAC addresses.
