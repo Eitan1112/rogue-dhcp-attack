@@ -10,12 +10,8 @@ py script.py --allowed server1 server2
 ```
 
 ## Details
-The tool will sniff DHCP packets, originated from a rogue server, using scapy. When a rogue server is found, a new thread is started to attack the server. The main thread will continue to listen to rogue servers. 
-The new thread will follow this chart:
-Send DHCP Discover > Listen to DHCP OFFER > Send DHCP Request > Listen to DHCP ACK / DHCP NAK
-
-On DHCP ACK - Continue the attack
-On DHCP NAK - Stops the attack, the server is neutralized.
+The tool will listen for DHCP packets, originated from a rogue server, using scapy. When a rogue server is found, a new thread is started to attack the server. The main thread will continue to listen to rogue servers. 
+The new thread will starve addresses until 5 consecutive failures to starve an address, or when a NAK packet is recieved.
 
 All the events are logged to 'script.log'.
 
