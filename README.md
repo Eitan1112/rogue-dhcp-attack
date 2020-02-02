@@ -9,7 +9,7 @@ git clone https://github.com/Eitan1112/rogue-dhcp-attack
 py script.py --allowed server1 server2
 ```
 
-## Tool Details
+## Details
 The tool will sniff DHCP packets, originated from a rogue server, using scapy. When a rogue server is found, a new thread is started to attack the server. The main thread will continue to listen to rogue servers. 
 The new thread will follow this chart:
 Send DHCP Discover > Listen to DHCP OFFER > Send DHCP Request > Listen to DHCP ACK / DHCP NAK
@@ -19,5 +19,5 @@ On DHCP NAK - Stops the attack, the server is neutralized.
 
 All the events are logged to 'script.log'.
 
-## Important Note
-* This tool will not work when connected to Wifi. The reason is that access points drop packets with spoofed MAC addresses.
+# Important Note
+This tool will not work when connected to Wifi. The reason is that access points drop packets with spoofed MAC addresses.
